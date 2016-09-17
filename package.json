@@ -1,0 +1,26 @@
+{
+  "version": "0.1.0",
+  "name": "device-discovery",
+  "description": "Discover devices on your local network.",
+  "license": "WTFPL",
+  "author": "Mark Tiedemann <www.marktiedemann@gmail.com>",
+  "keywords": [
+    "device",
+    "discovery",
+    "scan",
+    "local",
+    "network"
+  ],
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarkTiedemann/device-discovery.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MarkTiedemann/device-discovery/issues"
+  },
+  "homepage": "https://github.com/MarkTiedemann/device-discovery"
+}
