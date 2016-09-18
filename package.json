@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0",
+  "version": "0.2.0",
   "name": "device-discovery",
   "description": "Discover devices on your local network.",
   "license": "WTFPL",
@@ -7,7 +7,10 @@
   "keywords": [
     "device",
     "discovery",
+    "ping",
+    "icmp",
     "scan",
+    "tcp",
     "local",
     "network"
   ],
@@ -22,5 +25,8 @@
   "bugs": {
     "url": "https://github.com/MarkTiedemann/device-discovery/issues"
   },
-  "homepage": "https://github.com/MarkTiedemann/device-discovery"
+  "homepage": "https://github.com/MarkTiedemann/device-discovery",
+  "dependencies": {
+    "net-ping": "^1.2.0"
+  }
 }

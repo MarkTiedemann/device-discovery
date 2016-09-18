@@ -13,7 +13,8 @@ npm install device-discovery
 
 ```js
 
-const discovery = require('device-discovery')({ iface: 'WiFi' })
+const discovery = require('device-discovery')
+    ({ type: 'ICMP', iface: 'WiFi' })
 
 discovery.on('device', console.log)
     // => 192.168.0.20
@@ -27,12 +28,14 @@ discovery.on('device', console.log)
 ### `require('device-discovery')(options)`
 
 - **options** `<Object>`
+    - **type** `<String>`: *default =* `ICMP`; the protocol used for device discovery, one of `ICMP` or `TCP`
     - **iface** `<String>`: *default =* `WiFi`; the interface on which to scan for devices
     - **start** `<Number>`: *default =* `2`; the start of the range of hosts to be scanned
     - **end** `<Number>`: *default =* `254`; the end of the range of hosts to be scanned
-    - **port** `<Number>`: *default =* `1`; the port to be scanned
+    - **port** `<Number>`: *default =* `1`; the port to be scanned (`TCP` only)
     - **timeout** `<Number>`: *default =* `3000`; the timeout after which the scan of a host will be considered a miss
-- **throws** an `<Error>` if the interface cannot be found
+    - **retries** `<Number>`: *default =* `0`; the number of retries for pinning a host (`ICMP` only)
+- **throws** an `<Error>` if the interface cannot be found or the type is unknown
 - **returns** an `<EventEmitter>` with the following events:
     - **device** => `<String>`: the IPv4 address of the device found
 
