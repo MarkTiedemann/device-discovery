@@ -7,3 +7,6 @@ discovery.on('device', console.log)
     // => 192.168.0.1
     //    192.168.0.20
     //    ...
+
+discovery.on('done', () =>
+    console.log('Done!'))

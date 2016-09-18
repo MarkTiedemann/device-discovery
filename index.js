@@ -11,26 +11,12 @@ const getScanner = type => {
     }
 }
 
-module.exports = ({
-
-    type = 'ICMP',
-    iface = 'WiFi',
-    start = 2,
-    end = 254,
-    port = 1,
-    timeout = 3000,
-    retries = 0
-
-} = {}) => {
+module.exports = ({ type = 'ICMP', iface = 'WiFi', start = 2, end = 254, port = 1, timeout = 3000, retries = 0, excludeSelf = true } = {}) => {
 
     const address = getIfaceAddress(iface)
     const range = getIfaceRange(address)
-    const scanner = getScanner(type)({ range, start, end, port, timeout, retries })
 
-    return scanner.on('hit', function ({ host }) {
-        let device = `${range}.${host}`
-        // exclude own device
-        if (device !== address) this.emit('device', device)
-    })
+    return getScanner(type)({ range, start, end, port, timeout, retries,
+        exclude: excludeSelf ? address : false })
 
 }
