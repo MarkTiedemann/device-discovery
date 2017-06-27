@@ -37,7 +37,7 @@ discovery.on('done', () =>
     - **end** `<Number>`: *default =* `254`; the end of the range of hosts to be scanned
     - **port** `<Number>`: *default =* `1`; the port to be scanned (`TCP` only)
     - **timeout** `<Number>`: *default =* `3000`; the timeout after which the scan of a host will be considered a miss
-    - **retries** `<Number>`: *default =* `0`; the number of retries for pinning a host (`ICMP` only)
+    - **retries** `<Number>`: *default =* `0`; the number of retries for pinging a host (`ICMP` only)
     - **excludeSelf** `<Boolean>`: *default =* `true`; whether to exclude the device the discovery is run on
 - **throws** an `<Error>` if the interface cannot be found or the type is unknown
 - **returns** an `<EventEmitter>` with the following events:
